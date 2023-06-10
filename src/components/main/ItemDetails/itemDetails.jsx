@@ -87,8 +87,8 @@ const ItemDetails = ({ name }) => {
         <ErrorBubble />
       </section>
     )
-
   return (
+    
     <section className="catalog-item">
       <h2 className="text-center">{item.title}</h2>
       <div className="row">
