@@ -9,17 +9,11 @@ const Cart = ({ name }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="header-controls-pic header-controls-cart">
+    <div className="header-controls-pic header-controls-cart"
+      onClick={() => { navigate('/cart') }}>
       {cart.length > 0 &&
         <div className="header-controls-cart-full">{cart.length}</div>
       }
-      <div className="header-controls-cart-menu">
-        <img
-          src="/img/cart.png"
-          alt="Корзина"
-          title="Корзина"
-          onClick={() => { navigate('/cart') }}
-        /></div>
     </div>
   )
 };

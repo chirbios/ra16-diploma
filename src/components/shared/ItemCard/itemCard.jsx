@@ -8,7 +8,7 @@ const ItemCard = ({ item }) => (
       title={item.title}
     />
     <div className="card-body">
-      <p className="card-text">{item.title}</p>
+      <p className="card-text">{item.title.length > 35 ? item.title.split('').splice(0, 34).join('') + '...' : item.title}</p>
       <p className="card-text">{item.price.toLocaleString()} руб.</p>
       <NavLink to={`/products/${item.id}`} className="btn btn-outline-primary">Заказать</NavLink>
     </div>

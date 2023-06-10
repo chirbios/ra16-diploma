@@ -9,11 +9,11 @@ const Header = ({ menu, searchUrl }) => (
       </div>
     </div>
   </header>
-);
+)
 
 Header.propTypes = {
   linkTo: PropTypes.string,
   searchUrl: PropTypes.string
-};
+}
 
 export default Header

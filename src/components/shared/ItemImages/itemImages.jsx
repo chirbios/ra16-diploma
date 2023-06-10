@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import './main.css'
+import noPhoto from './nophoto.png'
 
 const ItemImages = ({ images, title }) => {
-
   const handleChangePhoto = (e) => {
     const curIndex = images.findIndex((v) => v === e.target.src);
     e.target.src = images[(curIndex + 1) % images.length];
@@ -18,12 +18,11 @@ const ItemImages = ({ images, title }) => {
     />
   ) : (
     <img
-      src="/img/nophoto.png"
+      src={noPhoto}
       className="card-img-top img-fluid img-fit"
       alt={title}
     />
   )
-
 
   return (
     imgResult

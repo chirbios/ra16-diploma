@@ -13,41 +13,41 @@ import './main.css'
 
 const ItemDetails = ({ name }) => {
 
-  const cartStorageName = 'storage_cart';
+  const cartStorageName = 'storage_cart'
 
-  const cart = useSelector((state) => state[cartStorageName].items);
+  const cart = useSelector((state) => state[cartStorageName].items)
 
-  const { item, status } = useSelector((state) => state[name]);
+  const { item, status } = useSelector((state) => state[name])
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const { id } = useParams();
+  const { id } = useParams()
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedSize, setSelectedSize] = useState('')
 
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(1)
 
   useEffect(() => {
-    dispatch(itemActions[name].requestItemDetails(id, name));
+    dispatch(itemActions[name].requestItemDetails(id, name))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
   const handleUpdateSelectedSizeList = (size) => {
-    if (selectedSize === size)
+    if (selectedSize === size){
       setSelectedSize('');
-    else {
+    } else {
       setSelectedSize(size);
     }
   }
 
   const handleIncCount = () => {
-    setCount(count < 10 ? count + 1 : count);
+    setCount(count < 10 ? count + 1 : count)
   }
 
   const handleDecCount = () => {
-    setCount(count > 1 ? count - 1 : count);
+    setCount(count > 1 ? count - 1 : count)
   }
 
   const handleAddToCart = () => {
@@ -164,15 +164,15 @@ const ItemDetails = ({ name }) => {
       </div>
     </section>
   )
-};
+}
 
 ItemDetails.propTypes = {
   name: PropTypes.string.isRequired,
   withSearch: PropTypes.bool
-};
+}
 
 ItemDetails.defaultProps = {
   name: 'itemDetails',
 }
 
-export default ItemDetails;
+export default ItemDetails

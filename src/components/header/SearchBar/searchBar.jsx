@@ -7,24 +7,20 @@ const SearchBar = ({ searchUrl }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="header-controls-pic header-controls-search">
+    <>
+      <div className="header-controls-pic header-controls-search" 
+           onClick={() => setShow((prev) => !prev)}></div>
       <form
         action={searchUrl}
         className={`header-controls-search-form form-inline ${show ? 'control-show' : 'invisible'}`}
-      >
+        >
         <input
           className={`form-control control-show`}
           placeholder="Поиск"
           name="q"
         />
       </form>
-      <img
-        src="/img/search.png"
-        alt="Поиск"
-        title="Поиск"
-        onClick={() => setShow((prev) => !prev)}
-      />
-    </div>
+    </>
   )
 };
 
